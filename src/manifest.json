@@ -7,5 +7,9 @@
         "index": {
             "label": "Starter Kit"
         }
-    }
+    },
+    "content-security-policy": "default-src *; object-src *; style-src *; script-src 'self'; frame-src https://172.16.25.240:3000/d/details/details;",
+    "permissions": [
+        "https://172.16.25.240:3000/d/details/details/"
+    ]
 }

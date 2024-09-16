@@ -20,6 +20,8 @@
 import React, { useEffect, useState } from 'react';
 import { Alert } from "@patternfly/react-core/dist/esm/components/Alert/index.js";
 import { Card, CardBody, CardTitle } from "@patternfly/react-core/dist/esm/components/Card/index.js";
+import { Page } from "@patternfly/react-core/dist/esm/components/Page/index.js";
+import './app.scss'; // Import the CSS file
 
 import cockpit from 'cockpit';
 
@@ -35,14 +37,19 @@ export const Application = () => {
     }, []);
 
     return (
-        <Card>
-            <CardTitle>Starter Kit</CardTitle>
-            <CardBody>
-                <Alert
-                    variant="info"
-                    title={ cockpit.format(_("Running on $0"), hostname) }
-                />
-            </CardBody>
-        </Card>
+        <Card style={{ height: "800px" }}>
+            <CardTitle>Elemento Tab</CardTitle>
+            <iframe
+                src="https://172.16.25.240:3000/d/details/details?orgId=1&from=1692574823999&to=1692630666725&refres=auto&kiosk=true"
+                width="1500px"
+                height="100%"
+                title="Example Iframe"
+                style={{ border: 'none', height:'100%'}}
+            ></iframe>
+            <Alert
+                variant="info"
+                title={cockpit.format(_("Running on $0"), hostname)}
+            />
+    </Card>
     );
 };
